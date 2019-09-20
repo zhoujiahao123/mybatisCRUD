@@ -1,0 +1,15 @@
+2019-09-20 21:04:25,840 0      [           main] DEBUG ache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2019-09-20 21:04:25,916 76     [           main] DEBUG source.pooled.PooledDataSource  - PooledDataSource forcefully closed/removed all connections.
+2019-09-20 21:04:25,916 76     [           main] DEBUG source.pooled.PooledDataSource  - PooledDataSource forcefully closed/removed all connections.
+2019-09-20 21:04:25,916 76     [           main] DEBUG source.pooled.PooledDataSource  - PooledDataSource forcefully closed/removed all connections.
+2019-09-20 21:04:25,917 77     [           main] DEBUG source.pooled.PooledDataSource  - PooledDataSource forcefully closed/removed all connections.
+2019-09-20 21:04:25,969 129    [           main] DEBUG ansaction.jdbc.JdbcTransaction  - Opening JDBC Connection
+2019-09-20 21:04:26,127 287    [           main] DEBUG source.pooled.PooledDataSource  - Created connection 1018298342.
+2019-09-20 21:04:26,127 287    [           main] DEBUG ansaction.jdbc.JdbcTransaction  - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@3cb1ffe6]
+2019-09-20 21:04:26,127 287    [           main] DEBUG om.jacob.dao.IUserDao.saveUser  - ==>  Preparing: insert into user(username,address,sex,birthday) values(?,?,?,?); 
+2019-09-20 21:04:26,158 318    [           main] DEBUG om.jacob.dao.IUserDao.saveUser  - ==> Parameters: Jacob(String), 电子科技大学(String), 男(String), 1997-04-07 00:00:00.0(Timestamp)
+2019-09-20 21:04:26,158 318    [           main] DEBUG om.jacob.dao.IUserDao.saveUser  - <==    Updates: 1
+2019-09-20 21:04:26,158 318    [           main] DEBUG ansaction.jdbc.JdbcTransaction  - Committing JDBC Connection [com.mysql.jdbc.JDBC4Connection@3cb1ffe6]
+2019-09-20 21:04:26,158 318    [           main] DEBUG ansaction.jdbc.JdbcTransaction  - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@3cb1ffe6]
+2019-09-20 21:04:26,158 318    [           main] DEBUG ansaction.jdbc.JdbcTransaction  - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@3cb1ffe6]
+2019-09-20 21:04:26,158 318    [           main] DEBUG source.pooled.PooledDataSource  - Returned connection 1018298342 to pool.
