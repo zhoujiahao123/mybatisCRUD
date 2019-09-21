@@ -5,15 +5,28 @@
 <mapper namespace="com.jacob.dao.IUserDao">
 
     <resultMap id="userMap" type="com.jacob.domain.User">
-        <id property="userId" column="id"></id>
-        <result property="userName" column="username"></result>
-        <result property="userAddress" column="address"></result>
-        <result property="userSex" column="sex"></result>
-        <result property="userBirthday" column="birthday"></result>
+        <id property="id" column="id"></id>
+        <result property="username" column="username"></result>
+        <result property="address" column="address"></result>
+        <result property="sex" column="sex"></result>
+        <result property="birthday" column="birthday"></result>
     </resultMap>
-    <select id="findAll" resultMap="userMap">
+    <resultMap id="userAccountMap" type="user">
+        <id property="id" column="id"></id>
+        <result property="username" column="username"></result>
+        <result property="address" column="address"></result>
+        <result property="sex" column="sex"></result>
+        <result property="birthday" column="birthday"></result>
+        <!--配置user对象中的accounts集合的映射，oftype表示的是集合中的数据类型-->
+        <collection property="accounts" ofType="account">
+            <id column="aid" property="id"></id>
+            <result column="uid" property="uid"></result>
+            <result column="money" property="money"></result>
+        </collection>
+    </resultMap>
+    <select id="findAll" resultMap="userAccountMap">
         <!--select id as userId,username as userName,address as userAddress,sex as userSex,birthday as userBirthday from user ;-->
-        select * from user ;
+        select * from user u left outer join account a on u.id = a.uid;
     </select>
     <insert id="saveUser" parameterType="com.jacob.domain.User">
         <!--配置插入操作后，获取插入数据的id-->
@@ -48,5 +61,15 @@
     </select>
     <select id="findByVo" parameterType="com.jacob.domain.QureyVo" resultType="com.jacob.domain.User">
         select * from user where username like #{user.username};
+    </select>
+    <select id="findUserInIds" parameterType="com.jacob.domain.QureyVo" resultMap="userMap" >
+        select * from user
+        <where>
+            <if test="ids != null and ids.size()>0">
+                <foreach collection="ids" open="and id in (" close=")" item="uid" separator=",">
+                    #{uid}
+                </foreach>
+            </if>
+        </where>
     </select>
 </mapper>

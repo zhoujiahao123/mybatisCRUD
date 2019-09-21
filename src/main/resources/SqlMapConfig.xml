@@ -22,6 +22,8 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="com/jacob/dao/IUserDao.xml"></mapper>
+<!--        <mapper resource="com/jacob/dao/IUserDao.xml"></mapper>-->
+<!--        <mapper resource="com/jacob/dao/IAccountDao.xml"></mapper>-->
+        <package name="com.jacob.dao"/>
     </mappers>
 </configuration>

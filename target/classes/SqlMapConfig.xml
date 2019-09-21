@@ -5,7 +5,11 @@
 <configuration>
 <!--    <properties resource="jdbcConfig.properties">-->
 <!--    </properties>-->
+
     <properties url="file:///C:\Users\Jacob\IdeaProjects\mybatisCurd\src\main\resources\jdbcConfig.properties"></properties>
+    <typeAliases>
+        <package name="com.jacob.domain"/>
+    </typeAliases>
     <environments default="mysql">
         <environment id="mysql">
             <transactionManager type="JDBC"></transactionManager>
@@ -18,6 +22,8 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="com/jacob/dao/IUserDao.xml"></mapper>
+<!--        <mapper resource="com/jacob/dao/IUserDao.xml"></mapper>-->
+<!--        <mapper resource="com/jacob/dao/IAccountDao.xml"></mapper>-->
+        <package name="com.jacob.dao"/>
     </mappers>
 </configuration>

@@ -1,8 +1,9 @@
 package com.jacob.test;
 
+import com.jacob.dao.IAccountDao;
+import com.jacob.dao.IRoleDao;
 import com.jacob.dao.IUserDao;
-import com.jacob.domain.QureyVo;
-import com.jacob.domain.User;
+import com.jacob.domain.*;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -13,6 +14,7 @@ import org.junit.Test;
 
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -41,18 +43,20 @@ public class MybatisTest {
         IUserDao userDao = sqlSession.getMapper(IUserDao.class);
         List<User> users = userDao.findAll();
         for (User user : users) {
+            System.out.println("--------------每个用户的信息---------------");
             System.out.println(user);
+//            System.out.println(user.getAccounts());
         }
     }
 
     @Test
     public void testSave() {
         User user = new User();
-        user.setUserName("Jacob last insertID");
-        user.setUserAddress("电子科技大学");
+        user.setUsername("Jacob last insertID");
+        user.setAddress("电子科技大学");
         Date date = new Date(97, 3, 7);
-        user.setUserBirthday(date);
-        user.setUserSex("男");
+        user.setBirthday(date);
+        user.setSex("男");
         IUserDao userDao = sqlSession.getMapper(IUserDao.class);
         System.out.println("保存操作之前：" + user);
         userDao.saveUser(user);
@@ -63,12 +67,12 @@ public class MybatisTest {
     @Test
     public void testUpdate() {
         User user = new User();
-        user.setUserId(50);
-        user.setUserName("Jacob");
-        user.setUserAddress("电子科技大学");
+        user.setId(50);
+        user.setUsername("Jacob");
+        user.setAddress("电子科技大学");
         Date date = new Date(97, 3, 7);
-        user.setUserBirthday(date);
-        user.setUserSex("女");
+        user.setBirthday(date);
+        user.setSex("女");
         IUserDao userDao = sqlSession.getMapper(IUserDao.class);
         userDao.updateUser(user);
     }
@@ -110,11 +114,53 @@ public class MybatisTest {
         IUserDao iUserDao = sqlSession.getMapper(IUserDao.class);
         QureyVo vo = new QureyVo();
         User user = new User();
-        user.setUserName("%王%");
+        user.setUsername("%王%");
         vo.setUser(user);
         List<User> users = iUserDao.findByVo(vo);
         for (User user1 : users) {
             System.out.println(user1);
+        }
+    }
+
+    @Test
+    public void testFindInIds() {
+        IUserDao iUserDao = sqlSession.getMapper(IUserDao.class);
+        QureyVo vo = new QureyVo();
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(41);
+        list.add(42);
+        list.add(43);
+        vo.setIds(list);
+        List<User> users = iUserDao.findUserInIds(vo);
+        for (User user : users) {
+            System.out.println(user);
+        }
+    }
+
+    @Test
+    public void testFindAllAccount() {
+        IAccountDao accountDao = sqlSession.getMapper(IAccountDao.class);
+        List<Account> accounts = accountDao.findAll();
+        for (Account account : accounts) {
+            System.out.println("----------------每个Account的信息------------------");
+            System.out.println(account);
+            System.out.println(account.getUser());
+        }
+    }
+    @Test
+    public void testFindAllAccountUser() {
+        IAccountDao accountDao = sqlSession.getMapper(IAccountDao.class);
+        List<AccountUser> accounts = accountDao.findAllAccount();
+        for (AccountUser au : accounts) {
+            System.out.println(au);
+        }
+    }
+    @Test
+    public void testFindAllRole() {
+        IRoleDao roleDao = sqlSession.getMapper(IRoleDao.class);
+        List<Role> roles = roleDao.findAll();
+        for (Role role : roles) {
+            System.out.println(role);
         }
     }
 }

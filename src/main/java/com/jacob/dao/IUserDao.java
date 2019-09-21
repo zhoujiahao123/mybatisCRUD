@@ -21,4 +21,6 @@ public interface IUserDao {
     int findTotal();
 
     List<User> findByVo(QureyVo vo);
+
+    List<User> findUserInIds(QureyVo vo);
 }

@@ -1,15 +1,15 @@
 package com.jacob.domain;
 
+import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
-public class User {
+public class UserForRole implements Serializable {
     private Integer id;
     private String username;
     private String address;
     private String sex;
     private Date birthday;
-    private List<Account> accounts;
+
     public Integer getId() {
         return id;
     }
@@ -49,18 +49,10 @@ public class User {
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
-//
-//    public List<Account> getAccounts() {
-//        return accounts;
-//    }
-//
-//    public void setAccounts(List<Account> accounts) {
-//        this.accounts = accounts;
-//    }
 
     @Override
     public String toString() {
-        return "User{" +
+        return "UserForRole{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", address='" + address + '\'' +
