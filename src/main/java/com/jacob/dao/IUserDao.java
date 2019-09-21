@@ -1,5 +1,6 @@
 package com.jacob.dao;
 
+import com.jacob.domain.QureyVo;
 import com.jacob.domain.User;
 
 import java.util.List;
@@ -18,4 +19,6 @@ public interface IUserDao {
     List<User> findByName(String username);
 
     int findTotal();
+
+    List<User> findByVo(QureyVo vo);
 }

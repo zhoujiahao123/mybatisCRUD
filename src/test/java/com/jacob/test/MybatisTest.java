@@ -1,6 +1,7 @@
 package com.jacob.test;
 
 import com.jacob.dao.IUserDao;
+import com.jacob.domain.QureyVo;
 import com.jacob.domain.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -47,27 +48,27 @@ public class MybatisTest {
     @Test
     public void testSave() {
         User user = new User();
-        user.setUsername("Jacob last insertID");
-        user.setAddress("电子科技大学");
+        user.setUserName("Jacob last insertID");
+        user.setUserAddress("电子科技大学");
         Date date = new Date(97, 3, 7);
-        user.setBirthday(date);
-        user.setSex("男");
+        user.setUserBirthday(date);
+        user.setUserSex("男");
         IUserDao userDao = sqlSession.getMapper(IUserDao.class);
-        System.out.println("保存操作之前："+user);
+        System.out.println("保存操作之前：" + user);
         userDao.saveUser(user);
         //这已经将id直接赋值给我们当前的user了
-        System.out.println("保存操作之后:"+user);
+        System.out.println("保存操作之后:" + user);
     }
 
     @Test
     public void testUpdate() {
         User user = new User();
-        user.setId(50);
-        user.setUsername("Jacob");
-        user.setAddress("电子科技大学");
+        user.setUserId(50);
+        user.setUserName("Jacob");
+        user.setUserAddress("电子科技大学");
         Date date = new Date(97, 3, 7);
-        user.setBirthday(date);
-        user.setSex("女");
+        user.setUserBirthday(date);
+        user.setUserSex("女");
         IUserDao userDao = sqlSession.getMapper(IUserDao.class);
         userDao.updateUser(user);
     }
@@ -102,5 +103,18 @@ public class MybatisTest {
         IUserDao iUserDao = sqlSession.getMapper(IUserDao.class);
         int count = iUserDao.findTotal();
         System.out.println(count);
+    }
+
+    @Test
+    public void testFindByVo() {
+        IUserDao iUserDao = sqlSession.getMapper(IUserDao.class);
+        QureyVo vo = new QureyVo();
+        User user = new User();
+        user.setUserName("%王%");
+        vo.setUser(user);
+        List<User> users = iUserDao.findByVo(vo);
+        for (User user1 : users) {
+            System.out.println(user1);
+        }
     }
 }

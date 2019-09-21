@@ -3,60 +3,61 @@ package com.jacob.domain;
 import java.util.Date;
 
 public class User {
-    private Integer id;
-    private String username;
-    private String address;
-    private String sex;
-    private Date birthday;
+    private Integer userId;
+    private String userName;
+    private String userAddress;
+    private String userSex;
+    private Date userBirthday;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public Date getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
-    }
 
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", address='" + address + '\'' +
-                ", sex='" + sex + '\'' +
-                ", birthday=" + birthday +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
+                ", userAddress='" + userAddress + '\'' +
+                ", userSex='" + userSex + '\'' +
+                ", userBirthday=" + userBirthday +
                 '}';
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserAddress() {
+        return userAddress;
+    }
+
+    public void setUserAddress(String userAddress) {
+        this.userAddress = userAddress;
+    }
+
+    public String getUserSex() {
+        return userSex;
+    }
+
+    public void setUserSex(String userSex) {
+        this.userSex = userSex;
+    }
+
+    public Date getUserBirthday() {
+        return userBirthday;
+    }
+
+    public void setUserBirthday(Date userBirthday) {
+        this.userBirthday = userBirthday;
     }
 }

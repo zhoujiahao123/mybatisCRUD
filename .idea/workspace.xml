@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="990331d8-4a12-42a5-8b4f-807d25b51706" name="Default Changelist" comment="" />
+    <list default="true" id="990331d8-4a12-42a5-8b4f-807d25b51706" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jacob/domain/QureyVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/jdbcConfig.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logaxis.log" beforeDir="false" afterPath="$PROJECT_DIR$/logaxis.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jacob/dao/IUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jacob/dao/IUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jacob/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jacob/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/SqlMapConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SqlMapConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jacob/dao/IUserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jacob/dao/IUserDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/jacob/test/MybatisTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/jacob/test/MybatisTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SqlMapConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SqlMapConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jacob/dao/IUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jacob/dao/IUserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jacob/dao/IUserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jacob/dao/IUserDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jacob/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jacob/domain/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/jacob/test/MybatisTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/jacob/test/MybatisTest.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +31,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1QxQmsi3Fgpy0c9f9qXyCZ3slBa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -40,8 +59,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MybatisTest.testSave">
-    <configuration name="MybatisTest.testDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MybatisTest.testFindAll">
+    <configuration name="MybatisTest.testFindAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mybatisCurd" />
       <extension name="coverage">
         <pattern>
@@ -51,7 +70,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.jacob.test" />
       <option name="MAIN_CLASS_NAME" value="com.jacob.test.MybatisTest" />
-      <option name="METHOD_NAME" value="testDelete" />
+      <option name="METHOD_NAME" value="testFindAll" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -73,7 +92,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MybatisTest.testFindOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MybatisTest.testFindByVo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mybatisCurd" />
       <extension name="coverage">
         <pattern>
@@ -83,7 +102,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.jacob.test" />
       <option name="MAIN_CLASS_NAME" value="com.jacob.test.MybatisTest" />
-      <option name="METHOD_NAME" value="testFindOne" />
+      <option name="METHOD_NAME" value="testFindByVo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -123,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MybatisTest.testFindAll" />
+        <item itemvalue="JUnit.MybatisTest.testFindByVo" />
         <item itemvalue="JUnit.MybatisTest.testSave" />
         <item itemvalue="JUnit.MybatisTest.testFindByName" />
         <item itemvalue="JUnit.MybatisTest.testFindTotal" />
-        <item itemvalue="JUnit.MybatisTest.testFindOne" />
-        <item itemvalue="JUnit.MybatisTest.testDelete" />
       </list>
     </recent_temporary>
   </component>
@@ -143,11 +162,25 @@
       <updated>1568709929555</updated>
       <workItem from="1568709931295" duration="1844000" />
       <workItem from="1568817294946" duration="83000" />
-      <workItem from="1568982968304" duration="4572000" />
+      <workItem from="1568982968304" duration="4803000" />
+      <workItem from="1569030369410" duration="4300000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
